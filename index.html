@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Commodities</title>
+</head>
+<body class="container">
+    <main class="flex-row justify-space-between">
+        <div class="col-6 col-md-4">
+    
+          <div class="card">
+            <h3 class="card-header text-uppercase">Search By Commodity</h3>
+            <form id="user-form" class="card-body">
+              <label class="form-label" for="username">Commodity</label>
+              <input name="commodity" id="commodity" type="text" autofocus="true" class="form-input" />
+              <button type="submit" class="btn">Get Latest Price</button>
+            </form>
+          </div>
+          <div class="col-6 col-md-8">
+            <h2 class="subtitle">Showing Latest Price in USD for: <span id="commodity-search-term"></span></h2>
+            <!-- There needs to be an empty HTML element for us to write repository data to. -->
+            <div id="commodity-container" class="list-group"></div>
+          </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

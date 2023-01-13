@@ -28,11 +28,30 @@ var getCommodity = function () {
       alert("Unable to connect to Commodities API");
     });
 };
+
+
+
 function renderResults(resultData) {
   console.log("inside renderResults function");
   console.log(resultData.data);
+  var commodityName = document.createElement("h2");
+  commodityName.textContent = resultData.data.date;
+  commodityContainer.append(commodityName);
   var commodityDate = document.createElement("h2");
-  commodityDate.textContent = resultData[0].date;
+  commodityDate.textContent = resultData.data.date;
   commodityContainer.append(commodityDate);
+  var commodityRate = document.createElement("h2");
+  commodityRate.textContent = 1 / resultData.data.rates.BRENTOIL;
+  commodityContainer.append(commodityRate);
+  var commodityUnit = document.createElement("h2");
+  commodityUnit.textContent = resultData.data.unit;
+  commodityContainer.append(commodityUnit);
 }
 getCommodity();
+
+searchForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  var formatToSearch = formatSelect.value;
+  console.log(formatToSearch);
+  //call the function and pass the value
+});
